@@ -1,112 +1,215 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Adopt a Friend</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailsy | Adopt a Pet</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Chewy&display=swap"
+    rel="stylesheet">
+  <!-- For icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-<header>
-  <h1>🐾 Adopt a Friend</h1>
-  <button id="darkBtn">🌙</button>
-</header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-paw"></i> Tailsy
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" class="active">Home</a></li>
+      <li><a href="#gallery">Pets</a></li>
+      <li><a href="#">Help</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="darkBtn" class="dark-btn"><i class="fa-solid fa-moon"></i></button>
+  </nav>
 
-<div class="controls">
-  <input type="text" id="search" placeholder="Search pet...">
-  
-  <div>
-    <button onclick="filterPets('all')">All</button>
-    <button onclick="filterPets('dog')">Dogs</button>
-    <button onclick="filterPets('cat')">Cats</button>
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <h1>Say Hello To Your<br>New Buddy</h1>
+      <p>Our Shelter Is Filled With Loving Animals Hoping For A Forever Home. They're Waiting For Someone Like You To
+        Give Them Warmth, Love, And Care. Will You Be The One To Change Their Life?</p>
+      <button class="btn-primary" onclick="document.getElementById('gallery').scrollIntoView()">Adopt A Pet</button>
+    </div>
+  </header>
+
+  <!-- Action Boxes -->
+  <section class="action-boxes">
+    <div class="action-box">
+      <div class="icon-wrap"><i class="fa-solid fa-paw"></i></div>
+      <p>Adopt A Pet</p>
+    </div>
+    <div class="action-box">
+      <div class="icon-wrap"><i class="fa-solid fa-hand-holding-heart"></i></div>
+      <p>Be A Volunteer</p>
+    </div>
+    <div class="action-box">
+      <div class="icon-wrap"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+      <p>Donate For Them</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery-section">
+    <div class="gallery-header">
+      <h2>These Lovely Souls Are Waiting For You</h2>
+      <p>Tap A Pet To Learn More About Them And Their Story.</p>
+      <div class="controls">
+        <button class="btn-filter active" onclick="filterPets('all', this)">All</button>
+        <button class="btn-filter" onclick="filterPets('dog', this)">Dogs</button>
+        <button class="btn-filter" onclick="filterPets('cat', this)">Cats</button>
+      </div>
+      <div class="search-bar">
+        <input type="text" id="search" placeholder="Search pet...">
+      </div>
+    </div>
+
+    <div id="petContainer" class="pet-grid">
+      <!-- Pet cards injected by JS -->
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <button class="btn-secondary">More</button>
+    </div>
+  </section>
+
+  <!-- Curve Decoration -->
+  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+    <path fill="#FCF8F2" fill-opacity="1"
+      d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+    </path>
+  </svg>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-content">
+      <h2>Our Journey In Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-img-wrap"><img src="cat4.jpeg" alt="Cat"></div>
+          <h3>20</h3>
+          <p>Cats</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-img-wrap"><img src="dog3.jpeg" alt="Dog"></div>
+          <h3>15</h3>
+          <p>Dogs</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-img-wrap icon-large"><i class="fa-solid fa-house-chimney-window"></i></div>
+          <h3>19</h3>
+          <p>Adopted</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-img-wrap"><img src="dog1.jpeg" alt="Dog"></div>
+          <h3>20</h3>
+          <p>Dogs</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="wave reverse" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120">
+    <path fill="#FCF8F2" fill-opacity="1"
+      d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z">
+    </path>
+  </svg>
+
+  <!-- Footer -->
+  <footer id="contact" class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <i class="fa-solid fa-paw" style="font-size: 60px; color: #E2D5CB;"></i>
+      </div>
+      <div class="footer-links">
+        <div class="link-col">
+          <h4>Address</h4>
+          <p>Sion Valley</p>
+          <p>Kochi</p>
+          <p>686631</p>
+          <p>India</p>
+        </div>
+        <div class="link-col">
+          <h4>Trusted Clients</h4>
+          <p>Name</p>
+          <p>Name</p>
+          <p>Name</p>
+          <p>Name</p>
+        </div>
+        <div class="link-col">
+          <h4>Follow Us</h4>
+          <p>LinkedIn</p>
+          <p>Instagram</p>
+          <p>Facebook</p>
+          <p>TikTok</p>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <form>
+          <input type="email" placeholder="Enter Your Email">
+          <input type="text" placeholder="Phone Number">
+          <input type="text" placeholder="Fax/Optional">
+          <button type="submit" class="btn-submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2025 Tailsy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Popup for Adoption (Image 1 Style) -->
+  <div id="popup" class="popup">
+    <div class="popup-box">
+      <span class="close" onclick="closePopup()">✖</span>
+
+      <!-- Vintage Pet Card Header -->
+      <div class="vintage-card">
+        <div class="meet-badge">
+          <div class="paw-badge"><i class="fa-solid fa-paw"></i></div>
+          <div class="meet-text">
+            Meet<br><span id="popupNameStr" class="chewy-font"></span>
+          </div>
+        </div>
+
+        <div class="card-image-wrap">
+          <img id="popupImg" src="" alt="Pet Image">
+          <div class="heart-badge"><i class="fa-solid fa-heart"></i></div>
+        </div>
+
+        <div class="card-info-box">
+          <div class="card-info-left">
+            <h2 id="popupTitle"></h2>
+            <p id="popupAge">Young</p>
+          </div>
+          <div class="card-info-right">
+            <ul id="popupDescList">
+              <!-- details built by js -->
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <form id="adoptForm">
+        <h3 style="margin-top:20px; color:var(--bg-dark-brown);">Adopt Registration</h3>
+        <input type="text" id="userName" placeholder="Your Name" required>
+        <input type="email" id="userEmail" placeholder="Your Email" required>
+        <textarea id="reason" placeholder="Why do you want to adopt?" required></textarea>
+        <button type="submit" class="btn-primary" style="width:100%; margin-top: 10px;">Send Request <i
+            class="fa-solid fa-paper-plane"></i></button>
+      </form>
+      <div id="msg" class="msg-box"></div>
+    </div>
   </div>
-</div>
 
-<section id="petContainer"></section>
-
-<section id="petContainer"></section>
-
-<div id="popup" class="popup">
-  <div class="popup-box">
-    
-    <span class="close" onclick="closePopup()">✖</span>
-
-    <h2 id="popupTitle"></h2>
-    <p id="popupDesc"></p>
-
-    <form id="adoptForm">
-      <input type="text" id="userName" placeholder="Your Name">
-      <input type="email" id="userEmail" placeholder="Your Email">
-      <textarea id="reason" placeholder="Why do you want to adopt?"></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
-
-    <p id="msg"></p>
-
-  </div>
-</div>
-
-<footer>
-  <p>📞 Happy Paws Shelter | +91 98765 43210</p>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Adopt a Friend</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-<header>
-  <h1>🐾 Adopt a Friend</h1>
-  <button id="darkBtn">🌙</button>
-</header>
-
-<div class="controls">
-  <input type="text" id="search" placeholder="Search pet...">
-  
-  <div>
-    <button onclick="filterPets('all')">All</button>
-    <button onclick="filterPets('dog')">Dogs</button>
-    <button onclick="filterPets('cat')">Cats</button>
-  </div>
-</div>
-
-<section id="petContainer"></section>
-
-<section id="petContainer"></section>
-
-<div id="popup" class="popup">
-  <div class="popup-box">
-    
-    <span class="close" onclick="closePopup()">✖</span>
-
-    <h2 id="popupTitle"></h2>
-    <p id="popupDesc"></p>
-
-    <form id="adoptForm">
-      <input type="text" id="userName" placeholder="Your Name">
-      <input type="email" id="userEmail" placeholder="Your Email">
-      <textarea id="reason" placeholder="Why do you want to adopt?"></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
-
-    <p id="msg"></p>
-
-  </div>
-</div>
-
-<footer>
-  <p>📞 Happy Paws Shelter | +91 98765 43210</p>
-</footer>
-
-<script src="script.js"></script>
-</body>
->>>>>>> 3424823896348229186b396cc6c58f23356152ec
 </html>
